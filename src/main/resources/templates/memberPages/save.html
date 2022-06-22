@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-
+    <form action="/member/save" method="post" name="saveForm">
+        <input type="text" name="memberEmail"><br>
+        <input type="password" name="memberPassword"><br>
+        <input type="text" name="memberName"><br>
+        <input type="text" name="memberAge"><br>
+        <input type="text" name="memberPhone"><br>
+        <input type="button" onclick="memberSave()" value="회원가입">
+    </form>
 </body>
+<script>
+    const memberSave = () => {
+        document.saveForm.submit();
+    }
+</script>
 </html>

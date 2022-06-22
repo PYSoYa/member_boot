@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-
+<form action="/member/login" method="post" name="loginForm">
+    <div class="main" >
+        <h2>Login</h2>
+        <div class="text">
+            <input type="text" style="margin-bottom: 10px;" id="memberEmail" name="memberEmail" placeholder="ID">
+        </div>
+        <div class="text">
+            <input type="password" id="memberPassword" name="memberPassword" placeholder="Password"> <br>
+        </div>
+        <h6><a style="margin-bottom: 10px;" href="/member/save-form">signup</a></h6>
+        <input type="button" style="margin-top: 20px;" onclick="memberLogin()" value="Login">
+    </div>
+</form>
 </body>
+<script>
+    const memberLogin = () => {
+        document.loginForm.submit();
+    }
+</script>
 </html>
