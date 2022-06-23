@@ -23,9 +23,15 @@ public class MemberDTO {
         this.memberAge = memberAge;
         this.memberPhone = memberPhone;
     }
-    public static MemberDTO findById(MemberEntity memberEntity){
+
+    public MemberDTO(String memberEmail, String memberPassword) {
+        this.memberEmail = memberEmail;
+        this.memberPassword = memberPassword;
+    }
+
+    public static MemberDTO toDTO(MemberEntity memberEntity) {
         MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setId(memberDTO.getId());
+        memberDTO.setId(memberEntity.getId());
         memberDTO.setMemberEmail(memberEntity.getMemberEmail());
         memberDTO.setMemberPassword(memberEntity.getMemberPassword());
         memberDTO.setMemberName(memberEntity.getMemberName());
@@ -33,10 +39,6 @@ public class MemberDTO {
         memberDTO.setMemberPhone(memberEntity.getMemberPhone());
         return memberDTO;
     }
-    public static MemberDTO findByUser(MemberEntity memberEntity){
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setMemberEmail(memberEntity.getMemberEmail());
-        memberDTO.setMemberPassword(memberEntity.getMemberPassword());
-        return memberDTO;
-    }
+
+
 }

@@ -12,7 +12,10 @@ import java.util.Optional;
 
 @Repository
 public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
-    MemberEntity findByMemberNameAndMemberPassword
-            (String memberEmail, String memberPassword);
-
+//    MemberEntity findByMemberNameAndMemberPassword
+//            (String memberEmail, String memberPassword);
+    // select * from member_table where memberEmail = ?
+    // 리턴타입: MemberEntity
+    // 매개변수: memberEmail(String)
+    Optional<MemberEntity> findByMemberEmail(String memberEmail);
 }
